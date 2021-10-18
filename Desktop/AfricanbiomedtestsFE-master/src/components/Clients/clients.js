@@ -18,24 +18,23 @@ import img5 from "../../assets/images/clients/5.png";
 import img6 from "../../assets/images/clients/6.png";
 import img7 from "../../assets/images/clients/7.png";
 import user from "../../assets/images/clients/user-1.png";
+// new adds
+import cl1 from "../../assets/images/clients/client1.png";
+import cl2 from "../../assets/images/clients/client2.png";
+import cl3 from "../../assets/images/clients/client3.png";
+import cl4 from "../../assets/images/clients/client4.png";
 
 class Clients extends Component {
   state = {
     clients: [
-      { id: 1, img: img1 },
-      { id: 2, img: img2 },
-      { id: 3, img: img3 },
-      { id: 4, img: img4 },
-      { id: 5, img: img5 },
-      { id: 6, img: img6 },
-      { id: 7, img: img7 },
-      { id: 1, img: img1 },
-      { id: 2, img: img2 },
-      { id: 3, img: img3 },
-      { id: 4, img: img4 },
-      { id: 5, img: img5 },
-      { id: 6, img: img6 },
-      { id: 7, img: img7 },
+      { id: 1, img: cl1 },
+      { id: 2, img: cl2 },
+      { id: 3, img: cl3 },
+      { id: 4, img: cl4 },
+      { id: 1, img: cl1 },
+      { id: 2, img: cl2 },
+      { id: 3, img: cl3 },
+      { id: 4, img: cl4 },
     ],
     responsive: {
       0: {
@@ -57,8 +56,8 @@ class Clients extends Component {
       <React.Fragment>
         <section className="section bg-light" id="client">
           <Container>
-            <SectionTitle title1="Our" title2="Client" />
-            <Row className="mt-4 pt-4 justify-content-center">
+            <SectionTitle title1="Our" title2="Partners" />
+            {/* <Row className="mt-4 pt-4 justify-content-center">
               <Col lg="8">
                 <div className="testimonial-box text-center">
                   <h1>
@@ -90,7 +89,7 @@ class Clients extends Component {
                   </p>
                 </div>
               </Col>
-            </Row>
+            </Row> */}
 
             <Row className="pt-4 mt-4">
               <Col sm="12">

@@ -13,50 +13,40 @@ import team2 from "../../assets/images/team/team-2.png";
 import team3 from "../../assets/images/team/team-3.png";
 import team4 from "../../assets/images/team/team-4.png";
 
+// new image
+import cl1 from "../../assets/images/clients/client1.png";
+import cl2 from "../../assets/images/clients/client2.png";
+import cl3 from "../../assets/images/clients/client3.png";
+import cl4 from "../../assets/images/clients/client4.png";
+
 class OurTeam extends Component {
     state = {
-        members : [
-            { id : 1, name : "SAMMIE R. PROVENCAL", image : team1, post : "CEO/Founder",
-                socials : [
-                    { class : "mdi mdi-facebook", link : "#" },
-                    { class : "mdi mdi-google", link : "#" },
-                    { class : "mdi mdi-twitter", link : "#" },
-                ]
+        members: [
+            {
+                id: 1, name: "SAMMIE R. PROVENCAL", image: cl1, post: "CEO/Founder"
             },
-            { id : 2, name : "EDITH E. WHEELER", image : team2, post : "CTO/Co-Founder",
-                socials : [
-                    { class : "mdi mdi-facebook", link : "#" },
-                    { class : "mdi mdi-google", link : "#" },
-                    { class : "mdi mdi-twitter", link : "#" },
-                ]
+            {
+                id: 2, name: "EDITH E. WHEELER", image: cl2, post: "CTO/Co-Founder"
             },
-            { id : 3, name : "PAULINE T. ROACH", image : team3, post : "Web Designer",
-                socials : [
-                    { class : "mdi mdi-facebook", link : "#" },
-                    { class : "mdi mdi-google", link : "#" },
-                    { class : "mdi mdi-twitter", link : "#" },
-                ]
+            {
+                id: 3, name: "PAULINE T. ROACH", image: cl3, post: "Web Designer"
             },
-            { id : 4, name : "DONALD M. LAUGHLIN", image : team4, post : "Web Developer",
-                socials : [
-                    { class : "mdi mdi-facebook", link : "#" },
-                    { class : "mdi mdi-google", link : "#" },
-                    { class : "mdi mdi-twitter", link : "#" },
-                ]
+            {
+                id: 4, name: "DONALD M. LAUGHLIN", image: cl4, post: "Web Developer"
             },
         ]
     }
     render() {
         return (
             <React.Fragment>
-        <section className="section" id="team">
-            <Container>
-                <SectionTitle title1="Our" title2="Team" />
-                <Row className="mt-4 pt-4">
-                    <TeamBox members={this.state.members} />
-                </Row>
-            </Container>
-        </section>
+                <section className="section" id="team">
+                    <Container>
+                        <SectionTitle title1="Our" title2="Partners" />
+                        <Row className="mt-4 pt-4">
+                            <TeamBox members={this.state.members} />
+                        </Row>
+                    </Container>
+                </section>
             </React.Fragment>
         );
     }

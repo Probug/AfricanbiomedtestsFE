@@ -9,7 +9,7 @@ class Footer extends Component {
     state = {
         footerItems: [
             {
-                title: "about Linexon",
+                title: "about AfricanBio",
                 links: [
                     { linkTitle: "About Us", link: "#" },
                     { linkTitle: "Press", link: "#" },

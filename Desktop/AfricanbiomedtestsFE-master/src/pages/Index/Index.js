@@ -14,9 +14,9 @@ class Index6 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pos : document.documentElement.scrollTop,
-            imglight : true,
-            navClass : ""
+            pos: document.documentElement.scrollTop,
+            imglight: true,
+            navClass: ""
         };
     }
 
@@ -24,19 +24,17 @@ class Index6 extends Component {
         window.addEventListener("scroll", this.scrollNavigation, true);
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         window.removeEventListener("scroll", this.scrollNavigation, true);
     }
 
     scrollNavigation = () => {
-        var scrollup=document.documentElement.scrollTop;
-        if(scrollup > this.state.pos)
-        {
-            this.setState({navClass : "darkheader", imglight : false});
+        var scrollup = document.documentElement.scrollTop;
+        if (scrollup > this.state.pos) {
+            this.setState({ navClass: "darkheader", imglight: false });
         }
-        else
-        {
-            this.setState({navClass : "", imglight : true});
+        else {
+            this.setState({ navClass: "", imglight: true });
         }
     };
 
@@ -45,34 +43,34 @@ class Index6 extends Component {
             <React.Fragment>
 
                 {/* Importing Navbar */}
-                <NavbarPage navclass={this.state.navClass} imglight={this.state.imglight}/>
+                <NavbarPage navclass={this.state.navClass} imglight={this.state.imglight} />
 
                 {/* import section */}
-                <Section/>
+                <Section />
 
                 {/* import section */}
-                <Features/>
-                
+                <Features />
+
                 {/* import get started */}
                 <GetStarted />
 
                 {/* import services */}
-                <Services/>
+                <Services />
 
                 {/* import clients */}
                 <Clients />
 
                 {/* imprtr team */}
-                <OurTeam/>
+                <OurTeam />
 
                 {/* import pricing */}
                 <Pricing />
 
                 {/* import get in touch */}
-                <GetInTouch/>
+                <GetInTouch />
 
                 {/* Importing Get Footer */}
-                <Footer/>
+                <Footer />
 
             </React.Fragment>
         );

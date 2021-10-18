@@ -6,7 +6,6 @@ import SectionTitle from "../../components/common/section-title";
 
 //Import Images
 import img1 from "../../assets/images/features/blackmaninlab.jpeg";
-import img2 from "../../assets/images/features/mockup2.png";
 import FeatureBox from "../common/feature-box";
 
 class Features extends Component {
@@ -15,7 +14,7 @@ class Features extends Component {
       <React.Fragment>
         <section className="section" id="features">
           <Container>
-            <SectionTitle title1="Our" title2="Features" />
+            <SectionTitle title1="About" title2="Us" />
             <Row className="mt-4 pt-4 vertical-content">
               <Col lg="6" className="mt-2">
                 <div>
@@ -29,29 +28,12 @@ class Features extends Component {
               <Col lg="6" className="mt-2 text-center">
                 <FeatureBox
                   class=""
-                  title="This is Improve Your Marketing business"
-                  desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  title="African Bio Med Tests"
+                  desc="AfricanBioMedTests™ is a registered trademark of African Medical Tests Ltd.
+                   Provider of specialized medical testing services of newborn screening, maternal health testing, 
+                   molecular diagnostics, and DNA testing in Nigeria."
                   link="#"
                 />
-              </Col>
-            </Row>
-            <Row className="mt-5 vertical-content">
-              <Col lg="6" className="mt-2">
-                <FeatureBox
-                  class="text-center"
-                  title="This Is Increase Your Marketing Performance"
-                  desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  link="#"
-                />
-              </Col>
-              <Col lg="6" className="mt-2">
-                <div>
-                  <img
-                    src={img2}
-                    alt=""
-                    className="img-fluid mx-auto d-block"
-                  />
-                </div>
               </Col>
             </Row>
           </Container>
