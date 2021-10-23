@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import './App.css';
 import routes from "./routes";
+import { StyleSheet, View, Text, Platform } from 'react-native'; // new 
+
 import {
   withRouter,
   Route,
@@ -26,23 +28,24 @@ import "./assets/css/colors/default.css";
 
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {};
   }
-    render() {
-        return (
-          <React.Fragment>
-          <Router>
-            <Switch>
-              {routes.map((route, idx) => (
-                <Route path={route.path} component={route.component} key={idx} />
-              ))}
-            </Switch>
-          </Router>
-        </React.Fragment>
-      );
-    }
+  render() {
+    return (
+      <React.Fragment>
+        <Router>
+          <Switch>
+            {routes.map((route, idx) => (
+              <Route path={route.path} component={route.component} key={idx} />
+
+            ))}
+          </Switch>
+        </Router>
+      </React.Fragment>
+    );
   }
-  
-  export default withRouter(App);
+}
+
+export default withRouter(App);

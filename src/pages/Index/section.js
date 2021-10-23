@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Form, Button } from "reactstrap";
 import BackgroundSlider from 'react-background-slider';
-
+import AppIntroSlider from 'react-native-app-intro-slider';
 
 //Import Images
 import image1 from "../../assets/images/blackbaby1.jpeg";
@@ -10,14 +10,52 @@ import image2 from "../../assets/images/dna.jpg";
 
 class Section extends Component {
 
+
+    on_Done_all_slides = () => {
+        this.setState({ show_Main_App: true });
+    }
+
+    on_Skip_slides = () => {
+        this.setState({ show_Main_App: true });
+    };
+
     render() {
         return (
             <React.Fragment>
                 <section className="back-slide" id="home">
-                    <BackgroundSlider
+                    {/* <BackgroundSlider
+                    
                         images={[image1, image2]}
                         duration={5} transition={2}
+
+                    /> */}
+
+
+                    <AppIntroSlider
+                        slides={slides}
+                        onDone={this.on_Done_all_slides}
+                        showSkipButton={true}
+                        onSkip={this.on_Skip_slides}
                     />
+
+
+
+                    const slides = [
+                    {
+                        key = 'k1',
+                        title = 'Event Organizer',
+                        text = 'Best Event Organizers',
+                        image1 = [image1]
+                    },
+                    {
+                        key = 'k2',
+                        title = 'Event Organizer',
+                        text = 'Best Event Organizers',
+                        image2 = [image2]
+                    } ]
+
+
+
                     <div className="bg-overlay"></div>
                     <div className="home-center">
                         <div className="home-desc-center">
@@ -33,6 +71,7 @@ class Section extends Component {
                                 </Row>
 
                             </Container>
+
                         </div>
                     </div>
                 </section>
