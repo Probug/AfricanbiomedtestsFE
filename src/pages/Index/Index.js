@@ -17,6 +17,7 @@ class Index6 extends Component {
             pos: document.documentElement.scrollTop,
             imglight: true,
             navClass: ""
+
         };
     }
 

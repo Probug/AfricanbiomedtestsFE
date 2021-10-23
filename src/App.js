@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
 import routes from "./routes";
-import { StyleSheet, View, Text, Platform } from 'react-native'; // new 
+
 
 import {
   withRouter,
@@ -39,7 +39,6 @@ class App extends Component {
           <Switch>
             {routes.map((route, idx) => (
               <Route path={route.path} component={route.component} key={idx} />
-
             ))}
           </Switch>
         </Router>
