@@ -52,44 +52,58 @@ class Clients extends Component {
     },
   };
   render() {
+
+    const styleObject = {
+      whiteSpace: 'nowrap',
+      display: 'inline',
+      backgroundColor: 'green',
+      backgroundPosition: 'center',
+
+    };
     return (
       <React.Fragment>
         <section className="section bg-light" id="client">
           <Container>
             <SectionTitle title1="Our" title2="Partners" />
-            {/* <Row className="mt-4 pt-4 justify-content-center">
+            <Row >
               <Col lg="8">
-                <div className="testimonial-box text-center">
-                  <h1>
-                    <i className="mdi mdi-format-quote-open text-muted"></i>
-                  </h1>
-                  <h4>
-                    {" "}
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less.
-                  </h4>
-                  <div className="mt-3 mb-3">
+                <div >
+
+                  {/* //className="testimonial-box text-center" 
+className="mt-4 pt-4 justify-content-center"*/
+                  }
+                  <div style={styleObject}>
                     <img
-                      src={user}
-                      className="mx-auto d-block rounded-circle img-fluid"
-                      alt="testimonials-user"
+                      src={cl1}
+                      alt="logo"
+                      style={styleObject}
                     />
+                    <img
+                      src={cl2}
+
+                      alt="logo"
+                      style={styleObject}
+                    />
+                    <img
+                      src={cl3}
+
+                      alt="logo"
+                      style={styleObject}
+                    />
+                    <img
+                      src={cl4}
+
+                      alt="logo"
+                      style={styleObject}
+                    />
+
                   </div>
-                  <p className="text-muted testi-work mb-1">
-                    - Landing page User
-                  </p>
-                  <p className="text-muted">
-                    <span className="mdi mdi-star text-warning mr-1"></span>
-                    <span className="mdi mdi-star text-warning mr-1"></span>
-                    <span className="mdi mdi-star text-warning mr-1"></span>
-                    <span className="mdi mdi-star text-warning mr-1"></span>
-                    <span className="mdi mdi-star text-warning mr-1"></span>
-                  </p>
+
+
+
                 </div>
               </Col>
-            </Row> */}
+            </Row>
 
             <Row className="pt-4 mt-4">
               <Col sm="12">

@@ -20,30 +20,30 @@ import cl3 from "../../assets/images/clients/client3.png";
 import cl4 from "../../assets/images/clients/client4.png";
 
 class OurTeam extends Component {
-    state = {
-        members: [
-            {
-                id: 1, name: "SAMMIE R. PROVENCAL", image: cl1, post: "CEO/Founder"
-            },
-            {
-                id: 2, name: "EDITH E. WHEELER", image: cl2, post: "CTO/Co-Founder"
-            },
-            {
-                id: 3, name: "PAULINE T. ROACH", image: cl3, post: "Web Designer"
-            },
-            {
-                id: 4, name: "DONALD M. LAUGHLIN", image: cl4, post: "Web Developer"
-            },
-        ]
-    }
+    // state = {
+    //     members: [
+    //         {
+    //             id: 1, name: "SAMMIE R. PROVENCAL", image: cl1, post: "CEO/Founder"
+    //         },
+    //         {
+    //             id: 2, name: "EDITH E. WHEELER", image: cl2, post: "CTO/Co-Founder"
+    //         },
+    //         {
+    //             id: 3, name: "PAULINE T. ROACH", image: cl3, post: "Web Designer"
+    //         },
+    //         {
+    //             id: 4, name: "DONALD M. LAUGHLIN", image: cl4, post: "Web Developer"
+    //         },
+    //     ]
+    // }
     render() {
         return (
             <React.Fragment>
                 <section className="section" id="team">
                     <Container>
-                        <SectionTitle title1="Our" title2="Partners" />
+                        <SectionTitle title1="" title2="" />
                         <Row className="mt-4 pt-4">
-                            <TeamBox members={this.state.members} />
+                            {/* <TeamBox members={this.state.members} /> */}
                         </Row>
                     </Container>
                 </section>
