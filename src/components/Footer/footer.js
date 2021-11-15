@@ -26,7 +26,7 @@ class Footer extends Component {
                     { linkTitle: "Academy", link: "#" },
                     { linkTitle: "Video Terms", link: "#" },
                     { linkTitle: "Monitoring Grader", link: "#" },
-                    { linkTitle: "Linexon API", link: "#" },
+                    { linkTitle: " ", link: "#" },
                 ]
             },
             {
