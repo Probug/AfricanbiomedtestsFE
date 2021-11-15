@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 import ScrollspyNav from "./scrollSpy";
 
 //Import Images
-import logolight from "../../assets/images/logo-light.png";
-import logodark from "../../assets/images/logo-dark.png";
+import logolight from "../../assets/images/Africanlogo.png";
+import logodark from "../../assets/images/Africanlogo.png";
 
 class NavbarPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       navItems: [
-        { id: 1, idnm: "home", navheading: "Home" },
-        { id: 2, idnm: "features", navheading: "Features" },
-        { id: 3, idnm: "service", navheading: "Services" },
+        { id: 1, idnm: "home", navheading: "HOME" },
+        { id: 2, idnm: "features", navheading: "ABOUT US" },
+        { id: 3, idnm: "service", navheading: "TEST MENU" },
         { id: 4, idnm: "client", navheading: "Client" },
-        { id: 5, idnm: "team", navheading: "Team" },
-        { id: 6, idnm: "pricing", navheading: "Pricing" },
-        { id: 7, idnm: "contact", navheading: "Contact" },
+        { id: 5, idnm: "team", navheading: "DISCOVER" },
+        { id: 6, idnm: "pricing", navheading: "SHOP" },
+        { id: 7, idnm: "contact", navheading: "CONTACT" },
       ],
       isOpen: false,
     };

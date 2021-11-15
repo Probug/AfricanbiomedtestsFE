@@ -9,21 +9,24 @@ import PricingBox from './pricing-box';
 
 class Pricing extends Component {
     state = {
-        pricings : [
-            { id : 1, title : "Free", price : "0", duration : "m",
-                features : 
-                    { bandwith : "1GB", onlinespace : "50MB", support : "No", domain : "-", hiddenFees : "-" }
-                
+        pricings: [
+            {
+                id: 1, title: "NEWBORN SCREENING",
+                features:
+                    { description: "For the first time in Nigeria, you can have your newborn screened.", order: "ORDER SCREENING KIT" }
+
             },
-            { id : 2, title : "Economy", price : "19", duration : "m",
-                features : 
-                    { bandwith : "1GB", onlinespace : "500MB", support : "Yes", domain : "5 Domain5", hiddenFees : "-" }
-                
+            {
+                id: 2, title: "PATERNITY DNA TESTING",
+                features:
+                    { description: "Free shipping in Lagos, If full DNA Test Kit is purchased for ₦100,000", order: "ORDER TEST KIT" }
+
             },
-            { id : 3, title : "Deluxe", price : "29", duration : "m",
-                features : 
-                    { bandwith : "1GB", onlinespace : "2GB", support : "Yes", domain : "10 Domain", hiddenFees : "No Hidden Fees" }
-                
+            {
+                id: 3, title: "PARTNERS ",
+                features:
+                    { description: "Find the Partnering Centre nearest to you for collection and drop offs", order: "FIND CENTER" }
+
             },
         ]
     }
@@ -32,7 +35,7 @@ class Pricing extends Component {
             <React.Fragment>
                 <section className="section bg-light" id="pricing">
                     <Container>
-                    <SectionTitle title1="Our" title2="Pricing" />
+
                         <Row className="mt-4 pt-4">
                             <PricingBox pricings={this.state.pricings} />
                         </Row>

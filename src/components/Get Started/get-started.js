@@ -9,11 +9,11 @@ class GetStarted extends Component {
           <Container>
             <Row>
               <Col md="9" className="text-white critarea-desc mt-3 mb-3">
-                Become a part of Linexon bussiness community today
+                12-Month Payment Plan is Available.
               </Col>
               <Col md="3" className="mt-3 mb-3 text-md-right">
                 <a href="#home" className="btn btn-outline-custom">
-                  Get Started
+                  Apply Here
                 </a>
               </Col>
             </Row>
