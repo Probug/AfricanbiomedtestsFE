@@ -17,26 +17,26 @@ class Pricing extends Component {
 
             },
             {
-                id: 2, title: "PATERNITY DNA TESTING",
-                features:
-                    { description: "Free shipping in Lagos, If full DNA Test Kit is purchased for ₦100,000", order: "ORDER TEST KIT" }
-
-            },
-            {
-                id: 3, title: "PARTNERS ",
+                id: 3, title: "OUR MEDICAL PARTNERS ",
                 features:
                     { description: "Find the Partnering Centre nearest to you for collection and drop offs", order: "FIND CENTER" }
 
             },
+            {
+                id: 2, title: "PATERNITY DNA TESTING",
+                features:
+                    { description: "Free shipping in Lagos, If full DNA Test Kit is purchased for ₦100,000", order: "ORDER TEST KIT" }
+
+            }
         ]
     }
     render() {
         return (
             <React.Fragment>
-                <section className="section bg-light" id="pricing">
+                <section className="section-pricing bg-light" id="pricing">
                     <Container>
 
-                        <Row className="mt-4 pt-4">
+                        <Row className="mt-3 pt-4">
                             <PricingBox pricings={this.state.pricings} />
                         </Row>
                     </Container>

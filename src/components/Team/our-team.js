@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
 import { Container, Row } from "reactstrap";
 
@@ -9,31 +8,34 @@ import SectionTitle from "../../components/common/section-title";
 import TeamBox from "./team-box";
 
 //Import Images
-import team1 from "../../assets/images/team/team-1.png";
-import team2 from "../../assets/images/team/team-2.png";
-import team3 from "../../assets/images/team/team-3.png";
-import team4 from "../../assets/images/team/team-4.png";
+import img1 from "../../assets/images/icons/corona.png";
+import img2 from "../../assets/images/icons/babe.png";
+import img3 from "../../assets/images/icons/dna2.png";
+import img4 from "../../assets/images/icons/health.png";
+import img5 from "../../assets/images/icons/family.png";
+import img6 from "../../assets/images/icons/medical.png";
 
-// new image
-import cl1 from "../../assets/images/clients/client1.png";
-import cl2 from "../../assets/images/clients/client2.png";
-import cl3 from "../../assets/images/clients/client3.png";
-import cl4 from "../../assets/images/clients/client4.png";
 
 class OurTeam extends Component {
     state = {
         members: [
             {
-                id: 1, name: "SAMMIE R. PROVENCAL", image: cl1, post: "CEO/Founder"
+                id: 1, name: "COVID-19 & ANTIBODY TESTING", image: img1, post: "Real-time reverse transcription polymerase chain reaction (RT-PCR) test can be done on respiratory samples to detect the presence of the virus."
             },
             {
-                id: 2, name: "EDITH E. WHEELER", image: cl2, post: "CTO/Co-Founder"
+                id: 2, name: "NEWBORN SCREENING", image: img2, post: "We provide newborn screening for your little one within the first few days of birth. Through our website, partner Hospitals, Pharmacies and Medical Labs."
             },
             {
-                id: 3, name: "PAULINE T. ROACH", image: cl3, post: "Web Designer"
+                id: 3, name: "FORENSIC DNA TESTING", image: img3, post: "We provide DNA testing services for non-legal and legal paternity and forensic DNA testing for the private individual, law enforcement and judicial users."
             },
             {
-                id: 4, name: "DONALD M. LAUGHLIN", image: cl4, post: "Web Developer"
+                id: 4, name: "WELLNESS DNA TESTING", image: img4, post: "With our wellness, you can go for inexpensive, time-efficient genetic profiling to determine your predisposition to certain diseases and conditions."
+            },
+            {
+                id: 5, name: "PATERNITY TESTING", image: img5, post: "Our DNA analysis can be used to trace the authenticity of foods, feed and fiber origins and classification and may guard against counterfeit products."
+            },
+            {
+                id: 6, name: "CLINICAL TESTING", image: img6, post: "We provide clinical DNA testing services, through partnership with Hospitals, Clinics and Labs for tests in cardiology, endocrinology, microbiology etc."
             },
         ]
     }
@@ -43,7 +45,7 @@ class OurTeam extends Component {
                 <section className="section" id="team">
                     <Container>
                         <SectionTitle title1="Our" title2="Partners" />
-                        <Row className="mt-4 pt-4">
+                        <Row className="mt-3 pt-3">
                             <TeamBox members={this.state.members} />
                         </Row>
                     </Container>
@@ -53,60 +55,4 @@ class OurTeam extends Component {
     }
 }
 
-=======
-import React, { Component } from 'react';
-import { Container, Row } from "reactstrap";
-
-//Import Components
-import SectionTitle from "../../components/common/section-title";
-
-//Import Team Box
-import TeamBox from "./team-box";
-
-//Import Images
-import team1 from "../../assets/images/team/team-1.png";
-import team2 from "../../assets/images/team/team-2.png";
-import team3 from "../../assets/images/team/team-3.png";
-import team4 from "../../assets/images/team/team-4.png";
-
-// new image
-import cl1 from "../../assets/images/clients/client1.png";
-import cl2 from "../../assets/images/clients/client2.png";
-import cl3 from "../../assets/images/clients/client3.png";
-import cl4 from "../../assets/images/clients/client4.png";
-
-class OurTeam extends Component {
-    // state = {
-    //     members: [
-    //         {
-    //             id: 1, name: "SAMMIE R. PROVENCAL", image: cl1, post: "CEO/Founder"
-    //         },
-    //         {
-    //             id: 2, name: "EDITH E. WHEELER", image: cl2, post: "CTO/Co-Founder"
-    //         },
-    //         {
-    //             id: 3, name: "PAULINE T. ROACH", image: cl3, post: "Web Designer"
-    //         },
-    //         {
-    //             id: 4, name: "DONALD M. LAUGHLIN", image: cl4, post: "Web Developer"
-    //         },
-    //     ]
-    // }
-    render() {
-        return (
-            <React.Fragment>
-                <section className="section" id="team">
-                    <Container>
-                        <SectionTitle title1="" title2="" />
-                        <Row className="mt-4 pt-4">
-                            {/* <TeamBox members={this.state.members} /> */}
-                        </Row>
-                    </Container>
-                </section>
-            </React.Fragment>
-        );
-    }
-}
-
->>>>>>> 9880db8cdd6452e652cba53991fdc2d387e4ac1c
 export default OurTeam;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, FormGroup, Label } from "reactstrap";
 import { AvForm, AvField } from "availity-reactstrap-validation";
 import { Animated } from "react-animated-css";
+import Button from '@mui/material/Button';
 
 //Import Section Title
 import SectionTitle from "../common/section-title";
@@ -147,13 +148,14 @@ class GetInTouch extends Component {
                 </Row>
                 <Row>
                   <Col sm="12" className="text-right">
-                    <input
+                  <Button type="submit" id="submit" name="send" variant="contained" color="success">SEND MESSAGE</Button>
+                    {/* <input
                       type="submit"
                       id="submit"
                       name="send"
                       className="submitBnt btn btn-primary btn-custom"
                       value="Send Message"
-                    />
+                    /> */}
                     <div id="simple-msg"></div>
                   </Col>
                 </Row>

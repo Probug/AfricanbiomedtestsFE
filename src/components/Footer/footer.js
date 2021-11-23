@@ -9,36 +9,29 @@ class Footer extends Component {
     state = {
         footerItems: [
             {
-                title: "about AfricanBio",
+                title: "More Info",
                 links: [
-                    { linkTitle: "About Us", link: "#" },
-                    { linkTitle: "Press", link: "#" },
-                    { linkTitle: "Job Opening", link: "#" },
-                    { linkTitle: "Terms", link: "#" },
-                    { linkTitle: "Privacy", link: "#" },
+                    { linkTitle: "Newborn Screening", link: "#" },
+                    { linkTitle: "Paternity Testing", link: "#" },
+                    { linkTitle: "Forensic DNA Testing", link: "#" },
+                    { linkTitle: "Wellness DNA Testing", link: "#" },
+                    { linkTitle: "Maternal Health Screening", link: "#" },
+                    { linkTitle: "Molecular Cytogenetics", link: "#" },
+                    { linkTitle: "Clinical DNA Testing", link: "#" }
                 ]
             },
             {
-                title: "resaurses",
+                title: "resources",
                 links: [
                     { linkTitle: "Blog", link: "#" },
-                    { linkTitle: "Help Center", link: "#" },
-                    { linkTitle: "Academy", link: "#" },
-                    { linkTitle: "Video Terms", link: "#" },
-                    { linkTitle: "Monitoring Grader", link: "#" },
-                    { linkTitle: " ", link: "#" },
-                ]
-            },
-            {
-                title: "more info",
-                links: [
                     { linkTitle: "Pricing", link: "#" },
-                    { linkTitle: "For Marketing", link: "#" },
-                    { linkTitle: "For CEOs", link: "#" },
-                    { linkTitle: "For Agencies", link: "#" },
-                    { linkTitle: "Our Apps", link: "#" },
+                    { linkTitle: "Vacancy", link: "#" },
+                    { linkTitle: "Help Center", link: "#" },
+                    { linkTitle: "For Partners", link: "#" },
+                    { linkTitle: "For Staff", link: "#" },
+                    { linkTitle: "Privacy Policy", link: "#" }
                 ]
-            },
+            }
         ]
     }
     render() {
@@ -57,7 +50,7 @@ class Footer extends Component {
                             </Col>
                             {
                                 this.state.footerItems.map((item, key) =>
-                                    <Col lg="2" key={key}>
+                                    <Col lg="3" key={key}>
                                         <p className="text-uppercase footer-title">{item.title}</p>
                                         <ul className="list-unstyled company-sub-menu">
                                             {
@@ -73,16 +66,16 @@ class Footer extends Component {
                             <Col lg="3">
                                 <p className="text-uppercase footer-title">Contact Us</p>
                                 <div className="contact-us">
-                                    <p>Liason Office:1A Akin Osiyemi Street Off Allen Avenue Ikeja, <br />
-                                        Lagos Head Office & Operations: JaaGee House 88, Km 6 Ibadan-Ife Expressway Ibadan</p>
-                                    <p>+234 802 460 0677</p>
-                                    <p>info@africanbiomedtests.com</p>
+                                    <p><i className="mdi mdi-google-maps"></i> Liason Office:1A Akin Osiyemi Street Off Allen Avenue Ikeja, Lagos. <br />
+                                        Head Office & Operations: JaaGee House 88, Km 6 Ibadan-Ife Expressway Ibadan</p>
+                                    <p><i className="mdi mdi-cellphone-iphone"></i> +234 802 460 0677</p>
+                                    <p><i className="mdi mdi-email-open-outline"></i> info@africanbiomedtests.com</p>
                                 </div>
                                 <ul className="footer-icons list-inline mt-4">
                                     <li className="list-inline-item"><Link to="#" className=""><i className="mdi mdi-facebook"></i></Link></li>
                                     <li className="list-inline-item"><Link to="#" className=""><i className="mdi mdi-twitter"></i></Link></li>
-                                    <li className="list-inline-item"><Link to="#" className=""><i className="mdi mdi-google-plus"></i></Link></li>
-                                    <li className="list-inline-item"><Link to="#" className=""><i className="mdi mdi-apple"></i></Link></li>
+                                    <li className="list-inline-item"><Link to="#" className=""><i className="mdi mdi-youtube-play"></i></Link></li>
+                                    <li className="list-inline-item"><Link to="#" className=""><i className="mdi mdi-linkedin"></i></Link></li>
                                 </ul>
 
                             </Col>

@@ -5,8 +5,8 @@ import Footer from '../../components/Footer/footer';
 import Features from '../../components/Features/features';
 import GetStarted from "../../components/Get Started/get-started";
 import Services from '../../components/Services/services';
-import Clients from '../../components/Clients/clients';
-import OurTeam from '../../components/Team/our-team';
+// import Clients from '../../components/Clients/clients';
+// import OurTeam from '../../components/Team/our-team';
 import Pricing from '../../components/Pricing/pricing';
 import GetInTouch from '../../components/Get in Touch/get-in-touch';
 
@@ -49,20 +49,20 @@ class Index6 extends Component {
                 {/* import section */}
                 <Section />
 
-                {/* import section */}
-                <Features />
-
                 {/* import get started */}
                 <GetStarted />
+
+                {/* import section */}
+                <Features />
 
                 {/* import services */}
                 <Services />
 
                 {/* import clients */}
-                <Clients />
+                {/* <Clients /> */}
 
-                {/* imprtr team */}
-                <OurTeam />
+                {/* import team */}
+                {/* <OurTeam /> */}
 
                 {/* import pricing */}
                 <Pricing />

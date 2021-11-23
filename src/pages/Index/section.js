@@ -1,17 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import { Container, Row, Col, Form, Button } from "reactstrap";
+import { styled } from '@mui/material/styles';
+import { Container, Row, Col, Form } from "reactstrap";
 import BackgroundSlider from 'react-background-slider';
-<<<<<<< HEAD
-import AppIntroSlider from 'react-native-app-intro-slider';
-// import { StyleSheet, View, Text, Platform } from 'react-native';
-=======
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 // import AppIntroSlider from 'react-native-app-intro-slider';
->>>>>>> 9880db8cdd6452e652cba53991fdc2d387e4ac1c
 
 //Import Images
 import image1 from "../../assets/images/blackbaby1.jpeg"
 import image2 from "../../assets/images/dna.jpg"
+import { getImageListItemBarUtilityClass } from '@mui/material';
 // imprort style
 //import Styles from "./src/pages/Index/section.css"
 
@@ -30,7 +29,7 @@ class Section extends Component {
 
                     <div className="bg-overlay"></div>
                     <div className="home-center">
-                        <div className="home-desc-center">
+                        {/* <div className="home-desc-center">
                             <Container>
                                 <Row className="justify-content-center">
                                     <Col lg="10" className="text-center">
@@ -43,16 +42,21 @@ class Section extends Component {
 
                             </Container>
 
-                        </div>
+                        </div> */}
                         <div className="home-desc-center">
                             <Container>
                                 <Row className="justify-content-center">
                                     <Col lg="10" className="text-center">
-                                        <h6 className="home-title text-white">PURCHASE KIT FOR PATERNITY DNA TEST</h6>
-                                        <p className="pt-4 home-sub-title text-white mx-auto">Free Shipping if DNA kit and full test is purchased for ₦100,000  </p>
-                                        <button type="submit" className="btn btn-custom">CREATE AN ACCOUNT</button>
-                                        <p> </p>
-                                        <button type="submit" className="btn btn-custom">BUY DNA KIT</button>
+                                        <h6 className="home-title text-white">PURCHASE PATERNITY DNA TEST AND NEWBORN SCREENING KIT IN NIGERIA</h6>
+                                        <p className="pt-4 home-sub-title text-white mx-auto">A FEW DROPS OF BLOOD, FREE SHIPPING OF DNA KIT AND FULL TEST PURCHASED FOR ₦100,000  </p>
+                                       
+                                        <Stack   justifyContent="center" alignItems="center" spacing={2} direction="row">
+                                        <Button type="submit" variant="contained" color="error">BUY DNA KIT</Button>
+                                        <Button type="submit" variant="contained" color="error">CREATE AN ACCOUNT</Button>
+                                        </Stack>
+                                        {/* <button type="submit" variant="outlined" className="btn btn-custom">BUY DNA KIT</button>
+                                        <button type="submit" variant="outlined" className="btn btn-custom">CREATE AN ACCOUNT</button>  */}
+                                        
                                     </Col>
                                 </Row>
 
@@ -99,7 +103,7 @@ class Section extends Component {
             // </React.Fragment>
         );
     }
-}
+} 
 
 // const slideIndex = 1;
 // showSlides(slideIndex);
