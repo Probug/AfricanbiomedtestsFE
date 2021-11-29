@@ -51,21 +51,20 @@ const Login = () => {
         password: Yup.string().required('Password is required')
   });
 
-     function handleSubmit(values, props) {
-       toast();
-       accountService.login(values)
-           .then(() => {
-             navigate('/app/dashboard', { replace: true });
-           })
-           .catch(error => toast.error(error))
-           .finally(() => props.setSubmitting(false));
-   }
-    // eslint-disable-next-line no-console
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
-    //   
+  function handleSubmit(values, props) {
+    toast();
+    navigate('/app/dashboard', { replace: true });
+  }
+
+  //    function handleSubmit(values, props) {
+  //      toast();
+  //      accountService.login(values)
+  //          .then(() => {
+  //            navigate('/app/dashboard', { replace: true });
+  //          })
+  //          .catch(error => toast.error(error))
+  //          .finally(() => props.setSubmitting(false));
+  //  } 
 
 
   return (
