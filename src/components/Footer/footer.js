@@ -27,8 +27,8 @@ class Footer extends Component {
                     { linkTitle: "Pricing", link: "#" },
                     { linkTitle: "Vacancy", link: "#" },
                     { linkTitle: "Help Center", link: "#" },
-                    { linkTitle: "For Partners", link: "#" },
-                    { linkTitle: "For Staff", link: "#" },
+                    { linkTitle: "For Partners", link: "/hcpLogin" },
+                    { linkTitle: "For Staff", link: "/login" },
                     { linkTitle: "Privacy Policy", link: "#" }
                 ]
             }

@@ -17,8 +17,8 @@ import {createTheme, ThemeProvider} from '@material-ui/core/styles';
 
 const theme = createTheme({
   palette: {
-    teal: {
-      main: '#13b4be',
+    green: {
+      main: '#010100',
       contrastText: '#fff',
     }
   }
@@ -31,7 +31,7 @@ const DashboardNavbar = ({ onMobileNavOpen, ...rest }) => {
   return (
     <ThemeProvider theme={theme}>
     <AppBar
-    color="teal"
+    color="green"
       elevation={0}
       {...rest}
     >

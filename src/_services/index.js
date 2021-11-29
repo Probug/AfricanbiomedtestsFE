@@ -1,2 +1,2 @@
 export * from './account.Service';
-export * from './serviceOutlet.Service';
+export * from './healthcareProvider.Service';

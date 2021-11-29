@@ -1,5 +1,5 @@
 //import config from '../webpack.config';
-import { accountService, serviceOutletService } from '@/../_services';
+import { accountService, healthcareProviderService } from './../_services';
 
 
 export const fetchWrapper = {
@@ -50,7 +50,7 @@ function _delete(url) {
 function authHeader(url) {
     const config = 'http://carsverifyapi.azurewebsites.net';
     // return auth header with jwt if user is logged in and request is to the api url
-    const user = accountService.userValue || serviceOutletService.userValue;
+    const user = accountService.userValue || healthcareProviderService.userValue;
     const isLoggedIn = user && user.jwtToken;
     //const isApiUrl = url.startsWith(config.apiUrl);
     const isApiUrl = url.startsWith(config);
@@ -69,9 +69,9 @@ function handleResponse(response) {
             if ([401, 403].includes(response.status) && accountService.userValue ){
                 // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
                 accountService.logout();
-            }else if ([401, 403].includes(response.status) && serviceOutletService.userValue ){
+            }else if ([401, 403].includes(response.status) && healthcareProviderService.userValue ){
 
-                serviceOutletService.logout();
+                healthcareProviderService.logout();
             }
 
             const error = (data && data.message) || response.statusText;

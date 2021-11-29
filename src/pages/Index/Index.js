@@ -10,7 +10,7 @@ import Services from '../../components/Services/services';
 import Pricing from '../../components/Pricing/pricing';
 import GetInTouch from '../../components/Get in Touch/get-in-touch';
 
-class Index6 extends Component {
+class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -78,4 +78,4 @@ class Index6 extends Component {
     }
 }
 
-export default Index6;
+export default Index;

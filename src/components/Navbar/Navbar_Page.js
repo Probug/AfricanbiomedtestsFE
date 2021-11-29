@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
+import { Container, Row, Col, } from "reactstrap";
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import ScrollspyNav from "./scrollSpy";
@@ -46,6 +46,8 @@ class NavbarPage extends Component {
           }
         >
           <Container style={{display: "contents"}}>
+            <Row>
+              <Col lg="2" style={{paddingLeft: "50px"}}>
                 <div>
                   <Link to="/" className="logo text-uppercase">
                     {this.props.imglight === true ? (
@@ -65,6 +67,7 @@ class NavbarPage extends Component {
                     )}
                   </Link>
                 </div>
+              </Col>
               <div className="menu-extras">
                 <div className="menu-item">
                   <Link
@@ -82,6 +85,7 @@ class NavbarPage extends Component {
                   </Link>
                 </div>
               </div>
+              <Col lg="8">
                 <ScrollspyNav
                   scrollTargetIds={targetId}
                   scrollDuration="300"
@@ -101,11 +105,20 @@ class NavbarPage extends Component {
                           <a href={"#" + item.idnm}> {item.navheading}</a>
                         </li>
                       ))}
-                      <li><Link to="/login" >Login</Link></li>
-                      <li><Button href="/register" size="small" variant="contained" color="error" >Sign Up</Button></li>
+
                     </ul>
                   </div>
                 </ScrollspyNav>
+              </Col>
+              <Col lg="2" style={{paddingRight: "30px"}}>
+                <div>
+                  <ul className="navigation-menu">
+                    <li><Link to="/login" >Login</Link></li>
+                    <li><Button href="/register" size="small" variant="contained" color="error" >Sign Up</Button></li>
+                  </ul>
+                </div>
+              </Col>
+            </Row>
           </Container>
         </header>
       </React.Fragment>

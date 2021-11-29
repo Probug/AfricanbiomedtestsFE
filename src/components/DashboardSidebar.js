@@ -28,8 +28,8 @@ import {
   Users as UsersIcon
 } from 'react-feather';
 import NavItem from './NavItem';
-import { Role } from '@/../_helpers';
-import { accountService, serviceOutletService } from '@/../_services'
+import { Role } from './../_helpers';
+import { accountService, healthcareProviderService } from './../_services'
 
 // const user = {
 //   avatar: '/static/images/avatars/corporate-headshot.jpg',
@@ -127,50 +127,8 @@ const adminItems = [
     title: 'Stolen Vehicle Report '
   }
 ];
-const staffitems = [
-  {
-    href: '/app/dashboard',
-    icon: BarChartIcon,
-    title: 'Dashboard',
-  },
-  {
-    href: '/app/account',
-    icon: UserIcon,
-    title: 'My Profile'
-  },
-  {
-    href: '/app/stolenvehiclereport',
-    icon: AssignmentOutlinedIcon,
-    title: 'Stolen Vehicle Report '
-  },
-  {
-    href: '/app/serviceoutlets',
-    icon: BuildOutlinedIcon,
-    title: 'Service Outlet'
-  },
-  {
-    href: '/app/vehicleslist',
-    icon: CommuteOutlinedIcon,
-    title: 'AdminVehicles'
-  },
-  {
-    href: '/app/vehicleinspection',
-    icon: SearchOutlinedIcon,
-    title: 'Vehicle Inspection Admin'
-  },
-  {
-    href: '/app/voucher',
-    icon: LoyaltyOutlinedIcon,
-    title: 'Voucher'
-  },
-  {
-    href: '/app/adminvehiclemaintence',
-    icon: HistoryOutlinedIcon,
-    title: 'Admin Vehicle Maintenance History'
-  }
-];
 
-const serviceOutletItems = [
+const healthCareProviderItems = [
   {
     href: '/app/dashboard',
     icon: BarChartIcon,
@@ -194,18 +152,18 @@ const serviceOutletItems = [
 const DashboardSidebar = ({ onMobileClose, openMobile }) => {
 
   
-  const [user, setUser] = useState({});
-  const [serviceOutlet, setServiceOutlet] = useState({});
+//   const [user, setUser] = useState({});
+//   const [serviceOutlet, setServiceOutlet] = useState({});
 
-  useEffect(() => {
-    const subscription = accountService.user.subscribe(x => setUser(x));
-    return subscription.unsubscribe;
-}, []);
+//   useEffect(() => {
+//     const subscription = accountService.user.subscribe(x => setUser(x));
+//     return subscription.unsubscribe;
+// }, []);
 
-useEffect(() => {
-  const subscription = serviceOutletService.user.subscribe(x => setServiceOutlet(x));
-  return subscription.unsubscribe;
-}, []);
+// useEffect(() => {
+//   const subscription = healthcareProviderService.user.subscribe(x => setServiceOutlet(x));
+//   return subscription.unsubscribe;
+// }, []);
 
 
 
@@ -221,86 +179,190 @@ useEffect(() => {
   }, // eslint-disable-next-line 
   [location.pathname]);
 
-  // const userContent = (
-  //   <Box
-  //     sx={{
-  //       display: 'flex',
-  //       flexDirection: 'column',
-  //       height: '100%'
-  //     }}
-  //   >
-  //     <Box
-  //       sx={{
-  //         alignItems: 'center',
-  //         display: 'flex',
-  //         flexDirection: 'column',
-  //         p: 2
-  //       }}
-  //     >
-  //       <Avatar
-  //         component={RouterLink}
-  //         src={'/static/images/avatars/corporate-headshot.jpg'}
-  //         sx={{
-  //           cursor: 'pointer',
-  //           width: 64,
-  //           height: 64
+    //  if (user) 
+  return (
+    <>
+      <Hidden lgUp>
+        <Drawer
+          anchor="left"
+          onClose={onMobileClose}
+          open={openMobile}
+          variant="temporary"
+          PaperProps={{
+            sx: {
+              width: 256
+            }
+          }}
+        >
+            <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%'
+      }}
+    >
+      <Box
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          p: 2
+        }}
+      >
+        <Avatar
+          component={RouterLink}
+          src={'/static/images/avatars/corporate-headshot.jpg'}
+          sx={{
+            cursor: 'pointer',
+            width: 64,
+            height: 64
+          }}
+          to="/app/account"
+        />
+        <Typography
+          color="textPrimary"
+          variant="h5"
+        >
+          {/* {user.fullname} */}
+        </Typography>
+        <Typography
+          color="textSecondary"
+          variant="body2"
+        >
+          {/* {user.email} */}
+        </Typography>
+      </Box>
+      <Divider />
+      <Box sx={{ p: 2 }}>
+        <List>
+        {/* user.role === Role.User && */}
+        { 
+          items.map((item) => (
+            <NavItem
+              href={item.href}
+              key={item.title}
+              title={item.title}
+              icon={item.icon}
+            />
+          ))
+          }
+          {/* { user.role === Role.Admin &&
+            adminItems.map((adminItems) => (
+            <NavItem
+              href={adminItems.href}
+              key={adminItems.title}
+              title={adminItems.title}
+              icon={adminItems.icon}
+            />
+          ))
+          } */}
+        </List>
+      </Box>
+      <Box sx={{ flexGrow: 1 }} />
+    </Box>
+          {/* {userContent} */}
+        </Drawer>
+      </Hidden>
+      <Hidden lgDown>
+        <Drawer
+          anchor="left"
+          open
+          variant="persistent"
+          PaperProps={{
+            sx: {
+              width: 256,
+              top: 64,
+              height: 'calc(100% - 64px)'
+            }
+          }}
+        >
+            <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%'
+      }}
+    >
+      <Box
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          p: 2
+        }}
+      >
+        <Avatar
+          component={RouterLink}
+          src={'/static/images/avatars/corporate-headshot.jpg'}
+          sx={{
+            cursor: 'pointer',
+            width: 64,
+            height: 64
+          }}
+          to="/app/account"
+        />
+        <Typography
+          color="textPrimary"
+          variant="h5"
+        >
+          {/* {user.fullname} */}
+        </Typography>
+        <Typography
+          color="textSecondary"
+          variant="body2"
+        >
+          {/* {user.email} */}
+        </Typography>
+      </Box>
+      <Divider />
+      <Box sx={{ p: 2 }}>
+        <List>
+        {/* user.role === Role.User && */}
+        { 
+          items.map((item) => (
+            <NavItem
+              href={item.href}
+              key={item.title}
+              title={item.title}
+              icon={item.icon}
+            />
+          ))
+          }
+          {/* { user.role === Role.Admin &&
+            adminItems.map((adminItems) => (
+            <NavItem
+              href={adminItems.href}
+              key={adminItems.title}
+              title={adminItems.title}
+              icon={adminItems.icon}
+            />
+          ))
+          } */}
+        </List>
+      </Box>
+      <Box sx={{ flexGrow: 1 }} />
+    </Box>
+          {/* {userContent} */}
+        </Drawer>
+      </Hidden>
+    </>
+  ); 
+  // else if (serviceOutlet)
+  // return (
+  //   <>
+  //     <Hidden lgUp>
+  //       <Drawer
+  //         anchor="left"
+  //         onClose={onMobileClose}
+  //         open={openMobile}
+  //         variant="temporary"
+  //         PaperProps={{
+  //           sx: {
+  //             width: 256
+  //           }
   //         }}
-  //         to="/app/account"
-  //       />
-  //       <Typography
-  //         color="textPrimary"
-  //         variant="h5"
   //       >
-  //         {user.fullname}
-  //       </Typography>
-  //       <Typography
-  //         color="textSecondary"
-  //         variant="body2"
-  //       >
-  //         {user.email}
-  //       </Typography>
-  //     </Box>
-  //     <Divider />
-  //     <Box sx={{ p: 2 }}>
-  //       <List>
-  //       { user.role === Role.User &&
-  //         items.map((item) => (
-  //           <NavItem
-  //             href={item.href}
-  //             key={item.title}
-  //             title={item.title}
-  //             icon={item.icon}
-  //           />
-  //         ))
-  //         }
-  //         { user.role === Role.Admin &&
-  //           adminItems.map((adminItems) => (
-  //           <NavItem
-  //             href={adminItems.href}
-  //             key={adminItems.title}
-  //             title={adminItems.title}
-  //             icon={adminItems.icon}
-  //           />
-  //         ))
-  //         }
-  //         { user.role === Role.Staff &&
-  //           staffitems.map((staffitems) => (
-  //           <NavItem
-  //             href={staffitems.href}
-  //             key={staffitems.title}
-  //             title={staffitems.title}
-  //             icon={staffitems.icon}
-  //           />
-  //         ))
-  //         }
-  //       </List>
-  //     </Box>
-  //     <Box sx={{ flexGrow: 1 }} />
-  //   </Box>
-  // );
-
-  // const SOContent = (
-  //   <Box
+  //             <Box
   //     sx={{
   //       display: 'flex',
   //       flexDirection: 'column',
@@ -341,43 +403,13 @@ useEffect(() => {
   //     <Divider />
   //     <Box sx={{ p: 2 }}>
   //       <List>
-  //       { user.role === Role.User &&
-  //         items.map((item) => (
-  //           <NavItem
-  //             href={item.href}
-  //             key={item.title}
-  //             title={item.title}
-  //             icon={item.icon}
-  //           />
-  //         ))
-  //         }
-  //         { user.role === Role.Admin &&
-  //           adminItems.map((adminItems) => (
-  //           <NavItem
-  //             href={adminItems.href}
-  //             key={adminItems.title}
-  //             title={adminItems.title}
-  //             icon={adminItems.icon}
-  //           />
-  //         ))
-  //         }
-  //         { user.role === Role.Staff &&
-  //           staffitems.map((staffitems) => (
-  //           <NavItem
-  //             href={staffitems.href}
-  //             key={staffitems.title}
-  //             title={staffitems.title}
-  //             icon={staffitems.icon}
-  //           />
-  //         ))
-  //         }
   //         { serviceOutlet.role === Role.ServiceOutlet &&
-  //           serviceOutletItems.map((serviceOutletItems) => (
+  //           healthCareProviderItems.map((healthCareProviderItems) => (
   //           <NavItem
-  //             href={serviceOutletItems.href}
-  //             key={serviceOutletItems.title}
-  //             title={serviceOutletItems.title}
-  //             icon={serviceOutletItems.icon}
+  //             href={healthCareProviderItems.href}
+  //             key={healthCareProviderItems.title}
+  //             title={healthCareProviderItems.title}
+  //             icon={healthCareProviderItems.icon}
   //           />
   //         ))
   //         }
@@ -385,341 +417,83 @@ useEffect(() => {
   //     </Box>
   //     <Box sx={{ flexGrow: 1 }} />
   //   </Box>
-  // );
-      // only show nav when logged in
-     if (user) 
-  return (
-    <>
-      <Hidden lgUp>
-        <Drawer
-          anchor="left"
-          onClose={onMobileClose}
-          open={openMobile}
-          variant="temporary"
-          PaperProps={{
-            sx: {
-              width: 256
-            }
-          }}
-        >
-            <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%'
-      }}
-    >
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          p: 2
-        }}
-      >
-        <Avatar
-          component={RouterLink}
-          src={'/static/images/avatars/corporate-headshot.jpg'}
-          sx={{
-            cursor: 'pointer',
-            width: 64,
-            height: 64
-          }}
-          to="/app/account"
-        />
-        <Typography
-          color="textPrimary"
-          variant="h5"
-        >
-          {user.fullname}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          {user.email}
-        </Typography>
-      </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
-        <List>
-        { user.role === Role.User &&
-          items.map((item) => (
-            <NavItem
-              href={item.href}
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-            />
-          ))
-          }
-          { user.role === Role.Admin &&
-            adminItems.map((adminItems) => (
-            <NavItem
-              href={adminItems.href}
-              key={adminItems.title}
-              title={adminItems.title}
-              icon={adminItems.icon}
-            />
-          ))
-          }
-          { user.role === Role.Staff &&
-            staffitems.map((staffitems) => (
-            <NavItem
-              href={staffitems.href}
-              key={staffitems.title}
-              title={staffitems.title}
-              icon={staffitems.icon}
-            />
-          ))
-          }
-        </List>
-      </Box>
-      <Box sx={{ flexGrow: 1 }} />
-    </Box>
-          {/* {userContent} */}
-        </Drawer>
-      </Hidden>
-      <Hidden lgDown>
-        <Drawer
-          anchor="left"
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: 256,
-              top: 64,
-              height: 'calc(100% - 64px)'
-            }
-          }}
-        >
-            <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%'
-      }}
-    >
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          p: 2
-        }}
-      >
-        <Avatar
-          component={RouterLink}
-          src={'/static/images/avatars/corporate-headshot.jpg'}
-          sx={{
-            cursor: 'pointer',
-            width: 64,
-            height: 64
-          }}
-          to="/app/account"
-        />
-        <Typography
-          color="textPrimary"
-          variant="h5"
-        >
-          {user.fullname}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          {user.email}
-        </Typography>
-      </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
-        <List>
-        { user.role === Role.User &&
-          items.map((item) => (
-            <NavItem
-              href={item.href}
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-            />
-          ))
-          }
-          { user.role === Role.Admin &&
-            adminItems.map((adminItems) => (
-            <NavItem
-              href={adminItems.href}
-              key={adminItems.title}
-              title={adminItems.title}
-              icon={adminItems.icon}
-            />
-          ))
-          }
-          { user.role === Role.Staff &&
-            staffitems.map((staffitems) => (
-            <NavItem
-              href={staffitems.href}
-              key={staffitems.title}
-              title={staffitems.title}
-              icon={staffitems.icon}
-            />
-          ))
-          }
-        </List>
-      </Box>
-      <Box sx={{ flexGrow: 1 }} />
-    </Box>
-          {/* {userContent} */}
-        </Drawer>
-      </Hidden>
-    </>
-  ); 
-  else if (serviceOutlet)
-  return (
-    <>
-      <Hidden lgUp>
-        <Drawer
-          anchor="left"
-          onClose={onMobileClose}
-          open={openMobile}
-          variant="temporary"
-          PaperProps={{
-            sx: {
-              width: 256
-            }
-          }}
-        >
-              <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%'
-      }}
-    >
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          p: 2
-        }}
-      >
-        <Avatar
-          component={RouterLink}
-          src={'/static/images/avatars/corporate-headshot.jpg'}
-          sx={{
-            cursor: 'pointer',
-            width: 64,
-            height: 64
-          }}
-          to="/app/account"
-        />
-        <Typography
-          color="textPrimary"
-          variant="h5"
-        >
-          {serviceOutlet.fullname}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          {serviceOutlet.email}
-        </Typography>
-      </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
-        <List>
-          { serviceOutlet.role === Role.ServiceOutlet &&
-            serviceOutletItems.map((serviceOutletItems) => (
-            <NavItem
-              href={serviceOutletItems.href}
-              key={serviceOutletItems.title}
-              title={serviceOutletItems.title}
-              icon={serviceOutletItems.icon}
-            />
-          ))
-          }
-        </List>
-      </Box>
-      <Box sx={{ flexGrow: 1 }} />
-    </Box>
-        </Drawer>
-      </Hidden>
-      <Hidden lgDown>
-        <Drawer
-          anchor="left"
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: 256,
-              top: 64,
-              height: 'calc(100% - 64px)'
-            }
-          }}
-        >
-               <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%'
-      }}
-    >
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          p: 2
-        }}
-      >
-        <Avatar
-          component={RouterLink}
-          src={'/static/images/avatars/corporate-headshot.jpg'}
-          sx={{
-            cursor: 'pointer',
-            width: 64,
-            height: 64
-          }}
-          to="/app/account"
-        />
-        <Typography
-          color="textPrimary"
-          variant="h5"
-        >
-          {serviceOutlet.fullname}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          {serviceOutlet.email}
-        </Typography>
-      </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
-        <List>
-          { serviceOutlet.role === Role.ServiceOutlet &&
-            serviceOutletItems.map((serviceOutletItems) => (
-            <NavItem
-              href={serviceOutletItems.href}
-              key={serviceOutletItems.title}
-              title={serviceOutletItems.title}
-              icon={serviceOutletItems.icon}
-            />
-          ))
-          }
-        </List>
-      </Box>
-      <Box sx={{ flexGrow: 1 }} />
-    </Box>
+  //       </Drawer>
+  //     </Hidden>
+  //     <Hidden lgDown>
+  //       <Drawer
+  //         anchor="left"
+  //         open
+  //         variant="persistent"
+  //         PaperProps={{
+  //           sx: {
+  //             width: 256,
+  //             top: 64,
+  //             height: 'calc(100% - 64px)'
+  //           }
+  //         }}
+  //       >
+  //              <Box
+  //     sx={{
+  //       display: 'flex',
+  //       flexDirection: 'column',
+  //       height: '100%'
+  //     }}
+  //   >
+  //     <Box
+  //       sx={{
+  //         alignItems: 'center',
+  //         display: 'flex',
+  //         flexDirection: 'column',
+  //         p: 2
+  //       }}
+  //     >
+  //       <Avatar
+  //         component={RouterLink}
+  //         src={'/static/images/avatars/corporate-headshot.jpg'}
+  //         sx={{
+  //           cursor: 'pointer',
+  //           width: 64,
+  //           height: 64
+  //         }}
+  //         to="/app/account"
+  //       />
+  //       <Typography
+  //         color="textPrimary"
+  //         variant="h5"
+  //       >
+  //         {serviceOutlet.fullname}
+  //       </Typography>
+  //       <Typography
+  //         color="textSecondary"
+  //         variant="body2"
+  //       >
+  //         {serviceOutlet.email}
+  //       </Typography>
+  //     </Box>
+  //     <Divider />
+  //     <Box sx={{ p: 2 }}>
+  //       <List>
+  //         { serviceOutlet.role === Role.ServiceOutlet &&
+  //           healthCareProviderItems.map((healthCareProviderItems) => (
+  //           <NavItem
+  //             href={healthCareProviderItems.href}
+  //             key={healthCareProviderItems.title}
+  //             title={healthCareProviderItems.title}
+  //             icon={healthCareProviderItems.icon}
+  //           />
+  //         ))
+  //         }
+  //       </List>
+  //     </Box>
+  //     <Box sx={{ flexGrow: 1 }} />
+  //   </Box>
        
-          {/* {SOContent} */}
-        </Drawer>
-      </Hidden>
-    </>
-  );
-  else return null
+  //         {/* {SOContent} */}
+  //       </Drawer>
+  //     </Hidden>
+  //   </>
+  // );
+  // else return null
 };
 
 DashboardSidebar.propTypes = {

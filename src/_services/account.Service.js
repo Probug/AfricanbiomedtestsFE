@@ -2,7 +2,7 @@
 import { BehaviorSubject } from 'rxjs';
 
 //import config from '../webpack.config';
-import { fetchWrapper } from '@/../_helpers';
+import { fetchWrapper } from './../_helpers';
 import { useNavigate } from 'react-router';
 
 const userSubject = new BehaviorSubject(null);

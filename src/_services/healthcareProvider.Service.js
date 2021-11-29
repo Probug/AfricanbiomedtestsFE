@@ -3,13 +3,13 @@ import { BehaviorSubject } from 'rxjs';
 import { useNavigate } from 'react-router';
 
 //import config from '../webpack.config';
-import { fetchWrapper } from '@/../_helpers';
+import { fetchWrapper } from './../_helpers';
 
 const userSubject = new BehaviorSubject(null);
 //const baseUrl = `${config.apiUrl}/accounts`;
 const baseUrl = 'http://carsverifyapi.azurewebsites.net/serviceoutlet';
 
-export const serviceOutletService = {
+export const healthcareProviderService = {
     login,
     logout,
     refreshToken,
